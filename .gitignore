@@ -1,0 +1,77 @@
+# Arquivos e pastas do Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.csproj.user
+*.vbproj.user
+*.cache
+*.vshost.*
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.[Cc]ache
+*.[Tt]log
+*.[Oo]bj
+*.[Bb]ak
+*.[Cc]sproj
+*.[Vv]bproj
+*.log
+*.vs/
+
+# Arquivos de build
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]est[Rr]esult*/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+build/
+bld/
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*.[Pp]ublishBackup
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+/packages/
+project.lock.json
+project.assets.json
+global.json
+
+# Ferramentas de cobertura de código e perfil
+opencover/
+ncrunch/
+coverlet/
+*.coverage
+*.coveragexml
+
+# Arquivos e pastas relacionados ao Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Arquivos de banco de dados SQL Server
+*.mdf
+*.ldf
+*.ndf
+
+# Arquivos de ambiente de desenvolvimento
+.env
+.local.settings.json
+
+# Pasta de artefatos
+artifacts/
+
+# Arquivos específicos da aplicação
+appsettings.json
+appsettings.*.json
+appsettings.Development.json
+appsettings.Production.json
+
+# Pasta de logs
+logs/
