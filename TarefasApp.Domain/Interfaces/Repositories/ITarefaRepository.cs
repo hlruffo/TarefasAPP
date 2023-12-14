@@ -9,7 +9,7 @@ namespace TarefasApp.Domain.Interfaces.Repositories
 {   
     /// <summary>
     /// interface de repositorio especifica para tarefa
-    /// </summary>
+    /// </summary> 
     public interface ITarefaRepository: IBaseRepository<Tarefa>
     {
     }
