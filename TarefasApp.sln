@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Services", "TarefasApp.Services\TarefasApp.Services.csproj", "{1C8D2B58-9A60-416B-BE4C-9E86AB5FBE89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarefasApp.Services", "TarefasApp.Services\TarefasApp.Services.csproj", "{1C8D2B58-9A60-416B-BE4C-9E86AB5FBE89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Camada de serviço", "1- Camada de serviço", "{3C47C21F-F1AB-4686-B654-EB87BC291355}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Camada de domínio", "2- Camada de domínio", "{14362F8F-F7BA-42BB-AEB9-E583F7223855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Camada de infraestrutura", "3- Camada de infraestrutura", "{E3FC6C24-D9EA-458F-B336-C15D46CBE42E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +24,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C8D2B58-9A60-416B-BE4C-9E86AB5FBE89} = {3C47C21F-F1AB-4686-B654-EB87BC291355}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A73070D-67D3-41CF-AE61-3B931A0C407A}
