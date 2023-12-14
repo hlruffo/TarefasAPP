@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TarefasApp.Services.Models;
 
 namespace TarefasApp.Services.Controllers
 {
@@ -14,7 +15,7 @@ namespace TarefasApp.Services.Controllers
         /// Método para cadastrar tarefas.
         /// </summary>
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post(TarefasPostModel tarefasPostModel)
         {
             return Ok("Cadastro de tarefa!");
         }
