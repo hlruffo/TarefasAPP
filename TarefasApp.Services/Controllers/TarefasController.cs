@@ -36,7 +36,17 @@ namespace TarefasApp.Services.Controllers
         {
             return Ok("Exclusão de tarefa!");
         }
+
+        /// <summary>
+        /// Método para consulta de tarefas.
+        /// </summary>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("Consulta de tarefas!");
+        }
     }
 }
+
 
 
