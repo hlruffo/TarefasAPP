@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TarefasApp.Domain.Entities;
+using TarefasApp.Domain.Interfaces.Services;
 using TarefasApp.Services.Models;
 
 namespace TarefasApp.Services.Controllers
@@ -11,13 +13,30 @@ namespace TarefasApp.Services.Controllers
     [ApiController]
     public class TarefasController : ControllerBase
     {
+        private readonly ITarefaDomainService? _tarefaDomainService;
+
+        public TarefasController(ITarefaDomainService? tarefaDomainService)
+        {
+            _tarefaDomainService = tarefaDomainService;
+        }
+
         /// <summary>
         /// Método para cadastrar tarefas.
         /// </summary>
         [HttpPost]
-        public IActionResult Post(TarefasPostModel tarefasPostModel)
+        public IActionResult Post([FromBody] TarefasPostModel model)
         {
-            return Ok("Cadastro de tarefa!");
+            var tarefa = new Tarefa
+            {
+                Id = Guid.NewGuid(),
+                Nome = model.Nome,
+                DataHora = model.DataHora,
+                Descricao = model.Descricao,
+                Prioridade = (PrioridadeTarefa)model.Prioridade
+            };
+
+            _tarefaDomainService?.Cadastrar(tarefa);
+            return Ok("Cadastro de tarefa realizado com sucesso!");
         }
 
         /// <summary>
