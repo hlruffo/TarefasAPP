@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TarefasApp.Domain.Entities;
+using TarefasApp.Infra.Data.Mappings;
 
 namespace TarefasApp.Infra.Data.Contexts
 {
@@ -28,7 +29,8 @@ namespace TarefasApp.Infra.Data.Contexts
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new CategoriaMap());
+            modelBuilder.ApplyConfiguration(new TarefaMap());   
         }
 
     }
