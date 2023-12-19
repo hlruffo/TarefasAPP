@@ -7,7 +7,7 @@ using TarefasApp.Domain.Entities;
 
 namespace TarefasApp.Domain.Interfaces.Repositories
 {
-    public interface ICatagoriaRepository : IBaseRepository<Categoria>
+    public interface ICategoriaRepository : IBaseRepository<Categoria>
     {
 
     }
