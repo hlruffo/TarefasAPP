@@ -19,6 +19,5 @@ namespace TarefasApp.Domain.Interfaces.Services
         List<Tarefa> Consultar();
         Tarefa ObterPorId(Guid id);
 
-
     }
 }
