@@ -13,6 +13,13 @@ namespace TarefasApp.Domain.Entities
         public DateTime? DataHora { get; set; }
         public string? Descricao { get; set; }
         public PrioridadeTarefa? Prioridade { get; set;}
+
+        public Guid? CategoriaId { get; set; }
+
+        #region
+        public Categoria? Categoria { get; set; }
+
+        #endregion
     }
     /// <summary>
     /// Enum para definir prioridade
