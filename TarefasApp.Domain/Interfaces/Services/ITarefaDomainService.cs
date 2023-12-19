@@ -12,7 +12,13 @@ namespace TarefasApp.Domain.Interfaces.Services
     /// </summary>
     public interface ITarefaDomainService
     {
-        void Cadastrar(Tarefa tarefa);
+        void Cadastrar(Tarefa tarefa); 
+        void Atualizar(Tarefa tarefa);
+        void Excluir(Guid id);
+
+        List<Tarefa> Consultar();
+        Tarefa ObterPorId(Guid id);
+
 
     }
 }
