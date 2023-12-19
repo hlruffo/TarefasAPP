@@ -15,15 +15,37 @@ namespace TarefasApp.Domain.Services
     public class TarefaDomainService : ITarefaDomainService
     {
         private readonly ITarefaRepository? _tarefaRepository;
+        private readonly ICategoriaRepository? _categoriaRepository;
 
-        public TarefaDomainService(ITarefaRepository? tarefaRepository)
+        public TarefaDomainService(ITarefaRepository? tarefaRepository, ICategoriaRepository? categoriaRepository)
         {
             _tarefaRepository = tarefaRepository;
+            _categoriaRepository = categoriaRepository;
+        }
+
+        public void Atualizar(Tarefa tarefa)
+        {
+            throw new NotImplementedException();
         }
 
         public void Cadastrar(Tarefa tarefa)
         {
           _tarefaRepository?.Add(tarefa);
+        }
+
+        public List<Tarefa> Consultar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Excluir(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tarefa ObterPorId(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
