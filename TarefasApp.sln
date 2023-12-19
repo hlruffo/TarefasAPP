@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Camada de domínio", "2-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Camada de infraestrutura", "3- Camada de infraestrutura", "{E3FC6C24-D9EA-458F-B336-C15D46CBE42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Domain", "TarefasApp.Domain\TarefasApp.Domain.csproj", "{B8A048DB-77D9-46A2-9A3F-24FAA3CCB376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarefasApp.Domain", "TarefasApp.Domain\TarefasApp.Domain.csproj", "{B8A048DB-77D9-46A2-9A3F-24FAA3CCB376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarefasApp.Infra.Data", "TarefasApp.Infra.Data\TarefasApp.Infra.Data.csproj", "{2B753603-2249-4183-9ABE-551869901E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarefasApp.Infra.Data", "TarefasApp.Infra.Data\TarefasApp.Infra.Data.csproj", "{2B753603-2249-4183-9ABE-551869901E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
