@@ -11,16 +11,16 @@ namespace TarefasApp.Domain.Services
 {
     public class CategoriaDomainService : ICategoriaDomainService
     {
-        private readonly ICategoriaRepository? _categoriarepository;
+        private readonly ICategoriaRepository? _categoriaRepository;
 
-        public CategoriaDomainService(ICategoriaRepository? categoriarepository)
+        public CategoriaDomainService(ICategoriaRepository? categoriaRepository)
         {
-            _categoriarepository = categoriarepository;
+            _categoriaRepository = categoriaRepository;
         }
 
-        public List<Categoria> Consultar()
+        public List<Categoria>? Consultar()
         {
-            throw new NotImplementedException();
+            return _categoriaRepository?.GetAll().OrderBy(c=>c.Nome).ToList();
         }
     }
 }
