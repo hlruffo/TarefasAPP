@@ -21,6 +21,11 @@ namespace TarefasApp.Infra.Data.Contexts
         {
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BDTarefasAPP;Integrated Security=True;");
         }
+
+        /// <summary>
+        /// método para adicionarmos cada classe de mapeamento do projeto
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
