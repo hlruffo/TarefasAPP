@@ -19,10 +19,12 @@ namespace TarefasApp.Infra.Data.Contexts
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName:"BDTarefasApp" );
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BDTarefasAPP;Integrated Security=True;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
 
-        //DbSet -> fornece os métodos CRUD para cada entidade
-        public DbSet<Tarefa>? Tarefa { get; set; }
     }
 }
