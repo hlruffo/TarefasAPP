@@ -18,6 +18,7 @@ namespace TarefasApp.Services
             services.AddTransient < ITarefaDomainService, TarefaDomainService >();
             services.AddTransient<ITarefaRepository, TarefaRepository>();
             services.AddTransient<ICategoriaRepository, ICategoriaRepository>();
+            services.AddTransient<ICategoriaDomainService, ICategoriaDomainService >();
         }
     }
 }
