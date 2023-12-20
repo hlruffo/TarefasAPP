@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TarefasApp.Domain.Interfaces.Services;
 
 namespace TarefasApp.Services.Controllers
 {
@@ -7,6 +8,13 @@ namespace TarefasApp.Services.Controllers
     [ApiController]
     public class CategoriasController : ControllerBase
     {
+        private readonly ICategoriaDomainService? _categoriaDomainService;
+
+        public CategoriasController(ICategoriaDomainService? categoriaDomainService)
+        {
+            _categoriaDomainService = categoriaDomainService;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
