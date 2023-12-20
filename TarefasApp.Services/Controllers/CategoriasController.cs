@@ -18,7 +18,8 @@ namespace TarefasApp.Services.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+            var categorias = _categoriaDomainService?.Consultar();
+            return Ok(categorias);
         }
     }
 }
