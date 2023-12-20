@@ -30,7 +30,11 @@ namespace TarefasApp.Domain.Services
 
         public void Cadastrar(Tarefa tarefa)
         {
-          _tarefaRepository?.Add(tarefa);
+            //verifica se a categoria informada existe no BD
+            if (_categoriaRepository?.GetById(tarefa.CategoriaId.Value) == null)
+                throw new ApplicationException("A Categoria informada não existe. Por favor, verifique.");
+
+            _tarefaRepository?.Add(tarefa);
         }
 
         public List<Tarefa> Consultar()
