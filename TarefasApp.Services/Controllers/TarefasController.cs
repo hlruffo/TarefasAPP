@@ -32,7 +32,8 @@ namespace TarefasApp.Services.Controllers
                 Nome = model.Nome,
                 DataHora = model.DataHora,
                 Descricao = model.Descricao,
-                Prioridade = (PrioridadeTarefa?)model.Prioridade
+                Prioridade = (PrioridadeTarefa?)model.Prioridade,
+                CategoriaId = model.CategoriaID,
             };
 
             _tarefaDomainService?.Cadastrar(tarefa);
