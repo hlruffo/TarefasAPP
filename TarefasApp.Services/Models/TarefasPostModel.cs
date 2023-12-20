@@ -20,6 +20,10 @@ namespace TarefasApp.Services.Models
 
         [Required(ErrorMessage = "Por favor, informe a prioridade da tarefa.")]
         [Range(1,3, ErrorMessage ="Por favor, informe valor 1(Baixa), 2(Média) ou 3(Alta) para prioridade")]
-        public int? Prioridade { get; set; }    
+        public int? Prioridade { get; set; }
+
+
+        [Required(ErrorMessage ="Por favor, informe o id da Categoria")]
+        public Guid? CategoriaID { get; set; }      
     }
 }
