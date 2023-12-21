@@ -25,7 +25,16 @@ namespace TarefasApp.Domain.Services
 
         public void Atualizar(Tarefa tarefa)
         {
-            throw new NotImplementedException();
+            //verificar se o id da tarefa existe no banco de dados
+            if (_tarefaRepository?.GetById(tarefa.Id.Value) == null)
+                throw new ApplicationException("A tarefa informada não existe. Por favor, verifique.");
+
+            // verifica se a categoria informada não existe no banco de dados
+            if (_categoriaRepository?.GetById(tarefa.CategoriaId.Value) == null)
+                throw new ApplicationException("A categoria informada não existe. Por favor, verifique");
+
+            //atualizar a tarefa
+            _tarefaRepository.Update(tarefa);  
         }
 
         public void Cadastrar(Tarefa tarefa)
