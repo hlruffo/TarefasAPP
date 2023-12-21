@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TarefasApp.Domain.Entities;
 using TarefasApp.Domain.Interfaces.Services;
@@ -14,10 +15,17 @@ namespace TarefasApp.Services.Controllers
     public class TarefasController : ControllerBase
     {
         private readonly ITarefaDomainService? _tarefaDomainService;
+        private readonly IMapper? _mapper;
 
-        public TarefasController(ITarefaDomainService? tarefaDomainService)
+        public TarefasController(ITarefaDomainService? tarefaDomainService,)
         {
             _tarefaDomainService = tarefaDomainService;
+        }
+
+        public TarefasController(ITarefaDomainService? tarefaDomainService, IMapper? mapper)
+        {
+            _tarefaDomainService = tarefaDomainService;
+            _mapper = mapper;
         }
 
         /// <summary>
