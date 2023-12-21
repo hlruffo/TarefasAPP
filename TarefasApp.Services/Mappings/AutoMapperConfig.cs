@@ -17,6 +17,8 @@ namespace TarefasApp.Services.Mappings
             );
 
             CreateMap<Categoria, CategoriasGetModel>();
+
+            CreateMap<TarefasPutModel, Tarefa>();
               
         }
     }
