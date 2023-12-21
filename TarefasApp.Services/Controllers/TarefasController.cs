@@ -16,12 +16,7 @@ namespace TarefasApp.Services.Controllers
     {
         private readonly ITarefaDomainService? _tarefaDomainService;
         private readonly IMapper? _mapper;
-
-        public TarefasController(ITarefaDomainService? tarefaDomainService,)
-        {
-            _tarefaDomainService = tarefaDomainService;
-        }
-
+       
         public TarefasController(ITarefaDomainService? tarefaDomainService, IMapper? mapper)
         {
             _tarefaDomainService = tarefaDomainService;
