@@ -15,6 +15,9 @@ namespace TarefasApp.Services.Mappings
                     entity.Id = Guid.NewGuid();
                 }
             );
+
+            CreateMap<Categoria, CategoriasGetModel>();
+              
         }
     }
 }
