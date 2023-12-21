@@ -46,19 +46,28 @@ namespace TarefasApp.Domain.Services
             _tarefaRepository?.Add(tarefa);
         }
 
-        public List<Tarefa> Consultar()
+        public List<Tarefa>? Consultar()
         {
-            throw new NotImplementedException();
+            return _tarefaRepository?.GetAll();
         }
 
         public void Excluir(Guid id)
         {
-            throw new NotImplementedException();
+            //buscar a tarefa no bd atraves do id
+            var tarefa = _tarefaRepository?.GetById(id);
+
+            //verificar se o id da tarefa existe no banco de dados
+            if (tarefa == null)
+                throw new ApplicationException("A tarefa informada não existe. Por favor, verifique.");
+
+            //excluir tarefa
+            _tarefaRepository?.Delete(tarefa);
+
         }
 
-        public Tarefa ObterPorId(Guid id)
+        public Tarefa? ObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return _tarefaRepository?.GetById(id);
         }
     }
 }
