@@ -34,15 +34,8 @@ namespace TarefasApp.Services.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TarefasPostModel model)
         {
-            var tarefa = new Tarefa
-            {
-                Id = Guid.NewGuid(),
-                Nome = model.Nome,
-                DataHora = model.DataHora,
-                Descricao = model.Descricao,
-                Prioridade = (PrioridadeTarefa?)model.Prioridade,
-                CategoriaId = model.CategoriaID,
-            };
+            var tarefa = _mapper?.Map<Tarefa>(model);
+
 
             _tarefaDomainService?.Cadastrar(tarefa);
             return Ok("Cadastro de tarefa realizado com sucesso!");
