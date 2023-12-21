@@ -40,9 +40,11 @@ namespace TarefasApp.Services.Controllers
         /// Método para atualizar tarefas.
         /// </summary>
         [HttpPut]
-        public IActionResult Put()
+        public IActionResult Put([FromBody] TarefasPutModel model)
         {
-            return Ok("Edição de tarefa!");
+            var tarefa = _mapper?.Map<Tarefa>(model);
+            _tarefaDomainService?.Atualizar(tarefa);
+            return Ok("Tarefa atualizada com sucesso!");
         }
 
         /// <summary>
