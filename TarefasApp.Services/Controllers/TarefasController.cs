@@ -111,7 +111,18 @@ namespace TarefasApp.Services.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Consulta de tarefas!");
+            try
+            {
+                var tarefas = _mapper?.Map<List<TarefasGetModel>>(_tarefaDomainService.Consultar());
+                return StatusCode(200, tarefas);
+            }
+            catch(Exception e)  
+            {
+                return StatusCode(500, new
+                {
+                    mensagem = e.Message
+                });
+            }
         }
     }
 }
