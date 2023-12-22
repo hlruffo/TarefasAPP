@@ -29,11 +29,23 @@ namespace TarefasApp.Services.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TarefasPostModel model)
         {
-            var tarefa = _mapper?.Map<Tarefa>(model);
-
-
-            _tarefaDomainService?.Cadastrar(tarefa);
-            return Ok("Cadastro de tarefa realizado com sucesso!");
+            try
+            {
+                var tarefa = _mapper?.Map<Tarefa>(model);
+                _tarefaDomainService?.Cadastrar(tarefa);
+                return StatusCode(201, new
+                { mensagem ="Tarefa atualizada com sucesso.",
+                    Id = tarefa.Id
+                });
+            }
+            catch(ApplicationException e)
+            {
+                return StatusCode(400, new { e.Message });
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new { e.Message });
+            }
         }
 
         /// <summary>
