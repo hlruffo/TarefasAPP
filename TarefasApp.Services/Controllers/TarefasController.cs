@@ -77,10 +77,32 @@ namespace TarefasApp.Services.Controllers
         /// <summary>
         /// Método para exclusão de tarefas.
         /// </summary>
-        [HttpDelete]
-        public IActionResult Delete()
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
         {
-            return Ok("Exclusão de tarefa!");
+            try
+            {
+                return StatusCode(204, new
+                {
+                    mensagem = "Tarefa excluída com sucesso.",
+                    Id = id
+                });
+
+            }
+            catch(ApplicationException e)
+            {
+                return StatusCode(400, new
+                {
+                    mensagem = e.Message
+                });
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new
+                {
+                    mensagem = e.Message
+                });
+            }
         }
 
         /// <summary>
