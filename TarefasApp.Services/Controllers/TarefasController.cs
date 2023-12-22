@@ -124,6 +124,23 @@ namespace TarefasApp.Services.Controllers
                 });
             }
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(Guid id)
+        {
+            try
+            {
+                var tarefa = _mapper?.Map<TarefasGetModel>(_tarefaDomainService.ObterPorId(id));
+                return StatusCode(200, tarefa);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new
+                {
+                    mensagem = e.Message
+                });
+            }
+        }
     }
 }
 
